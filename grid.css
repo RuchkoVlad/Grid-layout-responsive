@@ -1,0 +1,110 @@
+/*задаем родительскому контейнеру свойство grid*/
+.grid {
+    display: grid;
+}
+
+/*задаем внутренние отступы*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+}
+
+/*возможность задавать отступы раздельно*/
+.grid {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+/*свойство grid-template-columns и добавление колонок*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*свойство grid-template-row и добавление строк*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+/*свойства grid-auto-rows, grid-auto-columns и grid-auto-flow*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+}
+
+/*пример функции repeat()*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+/*функция minmax() и свойства auto-fill и auto-fit*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+/*расположение блоков контейнера при помощи grid-column-start,grid-column-end,grid-row-start,grid-row-end*/
+/*.box-init {*/
+/*    grid-column-start: 1;*/
+/*    grid-column-end: 3;*/
+
+/*    grid-row-start: 2;*/
+/*    grid-row-end: 3;*/
+/*}*/
+
+/*-----------------ВТОРОЙ МАКЕТ*/
+
+/*назаначение имен блоков в контейнере при помощи grid-area*/
+.l-header {
+    grid-area: my-header;
+}
+.l-nav {
+    grid-area: my-nav;
+}
+.l-main {
+    grid-area: my-main;
+}
+.l-aside {
+    grid-area: my-aside;
+}
+.l-section {
+    grid-area: my-section;
+}
+.l-footer {
+    grid-area: my-footer;
+}
+
+/*расположение блоков в контейнере при помощи grid-template-areas*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "my-header my-header my-header"
+        "my-nav my-main my-aside"
+        "my-nav my-section my-section"
+        "my-footer my-footer my-footer";
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+/*смена позиций блоков в контейнере при помощи grid-template-areas*/
+.grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-areas:
+        "my-nav my-header my-header"
+        "my-nav my-main my-aside"
+        "my-nav my-section my-aside"
+        "my-nav my-footer my-footer";
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
